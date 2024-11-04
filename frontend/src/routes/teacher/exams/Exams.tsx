@@ -1,68 +1,57 @@
-import Table from '@mui/joy/Table';
-import Button from '@mui/joy/Button';
-import Chip from '@mui/joy/Chip';
+import { Table } from "@mui/joy";
+import { EditButton } from "./examsButtons/EditButton";
+import { SessionsButton } from "./examsButtons/SessionsButton";
+import classes from "./exam.module.css";
+import { AddButton } from "./examsButtons/AddButton";
 
 export const Exams: React.FC = () => {
   return (
-    <div>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-        <h2 style={{ margin: 0 }}>ESAMI</h2>
-        <Button onClick={() => {}}>Nuovo esame</Button>
-      
-
+    <>
+      <div className={classes.headerLayout}>
+        <h1 style={{ padding: 0, margin: 0 }}>Esami</h1>
+        <AddButton></AddButton>
       </div>
-      
       <Table aria-label="basic table">
         <thead>
           <tr>
-            <th style={{ width: '40%' }}>Esami</th>
-            <th>Classi</th>
-            <th>Azioni</th>
+            <th style={{ width: "40%" }}>Esami</th>
+            <th style={{ width: "40%" }}>Classi</th>
+            <th style={{ width: "40%" }}>Azioni</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Matematica</td>
-            <td><Chip>Suse</Chip></td>
+            <td>React</td>
+            <td>Pixel</td>
             <td>
-              <Button onClick={() => {}} style={{ marginRight: '10px' }}>Modifica</Button>
-              <Button onClick={() => {}}>Sessioni</Button>
+              <div className={classes.buttonsLayout}>
+                <EditButton />
+                <SessionsButton />
+              </div>
             </td>
           </tr>
           <tr>
-            <td>Scienze</td>
-            <td><Chip>Cookie</Chip></td>
+            <td>Node.js</td>
+            <td>Suse</td>
             <td>
-              <Button onClick={() => {}} style={{ marginRight: '10px' }}>Modifica</Button>
-              <Button onClick={() => {}}>Sessioni</Button>
+              <div className={classes.buttonsLayout}>
+                <EditButton />
+                <SessionsButton />
+              </div>
             </td>
           </tr>
           <tr>
-            <td>Scienze</td>
-            <td><Chip>Pixel</Chip></td>
+            <td>Mongo</td>
+            <td>Cookie</td>
             <td>
-              <Button onClick={() => {}} style={{ marginRight: '10px' }}>Modifica</Button>
-              <Button onClick={() => {}}>Sessioni</Button>
-            </td>
-          </tr>
-          <tr>
-            <td>Scienze</td>
-            <td><Chip>Mouse</Chip></td>
-            <td>
-              <Button onClick={() => {}} style={{ marginRight: '10px' }}>Modifica</Button>
-              <Button onClick={() => {}}>Sessioni</Button>
-            </td>
-          </tr>
-          <tr>
-            <td>Scienze</td>
-            <td><Chip>Samba</Chip></td>
-            <td>
-              <Button onClick={() => {}} style={{ marginRight: '10px' }}>Modifica</Button>
-              <Button onClick={() => {}}>Sessioni</Button>
+              <div className={classes.buttonsLayout}>
+                <EditButton />
+                <SessionsButton />
+              </div>
             </td>
           </tr>
         </tbody>
       </Table>
-    </div>
+    </>
   );
 };
